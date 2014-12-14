@@ -1,3 +1,5 @@
+import org.apache.commons.lang3.RandomUtils
+
 /*
  * Copyright 2009 the original author or authors.
  *
@@ -15,14 +17,26 @@
  */
 
 class HelloSpockSpec extends spock.lang.Specification {
-  def "length of Spock's and his friends' names"() {
-    expect:
-    name.size() == length
+    def "length of Spock's and his friends' names"() {
+        expect:
+        println name
+        def map = generateMap(5)
+        println map
+        def map1 = ["123": "456"]
+        println map1
+        name.size() == length
 
-    where:
-    name     | length
-    "Spock"  | 5
-    "Kirk"   | 4
-    "Scotty" | 6
-  }
+        where:
+        name     | length
+        "Spock"  | 5
+        "Kirk"   | 4
+        "Scotty" | 6
+    }
+
+
+    def generateMap(int number) {
+        def map = [:]
+        number.times { map.(RandomUtils.nextInt(1000, 9999).toString()) = RandomUtils.nextInt(1000, 9999).toString() }
+        map
+    }
 }  

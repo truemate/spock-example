@@ -106,6 +106,12 @@
       <artifactId>h2</artifactId>
       <version>1.4.182</version>
     </dependency>
+<!-- VY added dependencies  -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.3.2</version>
+    </dependency>
   </dependencies>
 
   <repositories>
